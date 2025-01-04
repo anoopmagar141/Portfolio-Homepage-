@@ -1,0 +1,427 @@
+/* Reset CSS */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+    color: #333;
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar */
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #f39c12;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeInDown 1.5s;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1.5s;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #444;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  /* Skills Section */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    color: #6a11cb;
+  }
+  
+  /* Projects Section */
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /* Space to avoid overlap with fixed navbar */
+  }
+  
+  .project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    min-height: 250px; /* Ensure each card has a minimum height */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    background-color: #f3f3f3;
+  }
+  
+  .project-card h3 {
+    margin-top: 0;
+    color: #6a11cb;
+  }
+  
+  .project-card .project-details {
+    margin-top: 10px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
+  
+  .project-card:hover .project-details {
+    opacity: 1;
+    height: auto;
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Highlight Active Section in Navbar */
+  .nav-links li a.active {
+    color: #f39c12;
+    border-bottom: 2px solid #f39c12;
+  }
+  
+  /* Reveal Animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Button Styles */
+  button {
+    background: #6a11cb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #2575fc;
+  }
+  
+  /* Skills Section */
+  .skills-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+  }
+  
+  .skills-loop {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 10s linear infinite;
+  }
+  
+  .skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px; /* Ensure a consistent width for the animation */
+    flex: 0 0 auto; /* Prevent shrinking */
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    color: #6a11cb;
+  }
+  
+  /* Animation for scrolling left */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Duplicate the skills-loop for seamless transition */
+  .skills-container .skills-loop:after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+  }
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode #navbar {
+    background-color: #333;
+  }
+  
+  body.dark-mode .nav-links li a {
+    color: #fff;
+  }
+  
+  body.dark-mode .hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+  }
+  
+  body.dark-mode .project-card,
+  body.dark-mode .skill-card,
+  body.dark-mode .about {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  body.dark-mode .hero h1,
+  body.dark-mode .hero p {
+    color: #fff;
+  }
+  
+  body.dark-mode .project-card:hover {
+    background-color: #444;
+  }
+  
+  body.dark-mode .section-title {
+    color: #fff;
+  }
+  /* Skills Section */
+.skills-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+  }
+  
+  .skills-loop {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 10s linear infinite;
+  }
+  
+  .skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    flex: 0 0 auto;
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    color: #6a11cb;
+  }
+  
+  /* Animation for scrolling left */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Duplicate the skills-loop for seamless transition */
+  .skills-container .skills-loop:after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+  }
+  button {
+    background: #6a11cb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  button:hover {
+    background: #2575fc;
+    transform: scale(1.05);
+  }
+
+  /* Skills Section */
+.skills-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+}
+
+.skills-loop {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 10s linear infinite;
+}
+
+.skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px; /* Ensure a consistent width for the animation */
+    flex: 0 0 auto; /* Prevent shrinking */
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: #6a11cb;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+}
+
+.skills-loop {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 10s linear infinite;
+    padding-left: 20px; /* Prevent first card from being cut off */
+}
+
+.skill-card {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px; /* Ensure a consistent width for the animation */
+    flex: 0 0 auto; /* Prevent shrinking */
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: #6a11cb;
+}
+
+/* Animation for scrolling left */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Duplicate the skills-loop for seamless transition */
+.skills-container .skills-loop:after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+}
+
