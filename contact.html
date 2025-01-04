@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+  <!-- Contact Information Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Information</h2>
+    <p>You can reach me through the following ways:</p>
+    <ul>
+      <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+      <li>Phone: <a href="tel:+1234567890">+1 234 567 890</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></li>
+      <li>GitHub: <a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></li>
+    </ul>
+
+    <!-- Chat Section (Example) -->
+    <div id="chat">
+      <h3>Chat with Me</h3>
+      <textarea id="chat-box" placeholder="Start typing your message..."></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </section>
+
+  <script>
+    function sendMessage() {
+      const message = document.getElementById('chat-box').value;
+      if (message.trim() !== '') {
+        alert('Message sent: ' + message);
+        document.getElementById('chat-box').value = ''; // Clear the chat box
+      } else {
+        alert('Please type a message.');
+      }
+    }
+  </script>
+</body>
+</html>
