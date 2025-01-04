@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+      
+      const icon = document.getElementById("mode-icon");
+      icon.classList.toggle("fa-sun");
+      icon.classList.toggle("fa-moon");
+    }
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about" onclick="showSection('about')">About</a></li>
+        <li><a href="#skills" onclick="showSection('skills')">Skills</a></li>
+        <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Mode Toggle Button -->
+    <button id="mode-toggle" onclick="toggleMode()">
+      <i id="mode-icon" class="fas fa-sun"></i> <!-- Default icon for light mode -->
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div>
+      <h1>Welcome to My Portfolio</h1>
+      <p id="greeting"></p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Hello! I'm a passionate web developer with experience in creating modern, responsive, and dynamic web applications. 
+      I enjoy working with cutting-edge technologies and building user-friendly interfaces.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <div class="skills-loop">
+        <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+        <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+        <div class="skill-card"><i class="fab fa-react"></i><h3>React.js</h3></div>
+        <div class="skill-card"><i class="fab fa-node-js"></i><h3>Node.js</h3></div>
+        <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
+        <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git</h3></div>
+        <div class="skill-card"><i class="fab fa-docker"></i><h3>Docker</h3></div>
+        <div class="skill-card"><i class="fab fa-figma"></i><h3>Figma</h3></div>
+        <div class="skill-card"><i class="fas fa-database"></i><h3>SQL</h3></div>
+        <div class="skill-card"><i class="fab fa-java"></i><h3>Java</h3></div>
+        <div class="skill-card"><i class="fab fa-bootstrap"></i><h3>Bootstrap</h3></div>
+        <div class="skill-card"><i class="fab fa-angular"></i><h3>Angular</h3></div>
+        <div class="skill-card"><i class="fab fa-npm"></i><h3>NPM</h3></div>
+        <div class="skill-card"><i class="fab fa-github"></i><h3>GitHub</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-container">
+      <!-- Interactive Project Cards -->
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Description of Project 1</p>
+        <div class="project-details">
+          <p>Additional details about Project 1...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Description of Project 2</p>
+        <div class="project-details">
+          <p>Additional details about Project 2...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Description of Project 3</p>
+        <div class="project-details">
+          <p>Additional details about Project 3...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 4</h3>
+        <p>Description of Project 4</p>
+        <div class="project-details">
+          <p>Additional details about Project 4...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 5</h3>
+        <p>Description of Project 5</p>
+        <div class="project-details">
+          <p>Additional details about Project 5...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 6</h3>
+        <p>Description of Project 6</p>
+        <div class="project-details">
+          <p>Additional details about Project 6...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 7</h3>
+        <p>Description of Project 7</p>
+        <div class="project-details">
+          <p>Additional details about Project 7...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 8</h3>
+        <p>Description of Project 8</p>
+        <div class="project-details">
+          <p>Additional details about Project 8...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 9</h3>
+        <p>Description of Project 9</p>
+        <div class="project-details">
+          <p>Additional details about Project 9...</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Project 10</h3>
+        <p>Description of Project 10</p>
+        <div class="project-details">
+          <p>Additional details about Project 10...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
