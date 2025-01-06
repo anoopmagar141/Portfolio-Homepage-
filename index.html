@@ -3,44 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio site of a passionate web developer showcasing skills, projects, and more.">
   <title>Portfolio</title>
-  
+
   <link rel="stylesheet" href="css/stylesheet.css">
-  <script>
-    function toggleMode() {
-      const body = document.body;
-      body.classList.toggle("dark-mode");
-      
-      const icon = document.getElementById("mode-icon");
-      icon.classList.toggle("fa-sun");
-      icon.classList.toggle("fa-moon");
-    }
-  </script>
+    <!-- Add Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
+  
 </head>
-<body>
   <!-- Navbar -->
   <header id="navbar">
     <nav>
       <ul class="nav-links">
-        <li><a href="#about" onclick="showSection('about')">About</a></li>
-        <li><a href="#skills" onclick="showSection('skills')">Skills</a></li>
-        <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#about" onclick="showSection('about')" aria-label="Navigate to About section">About</a></li>
+        <li><a href="#skills" onclick="showSection('skills')" aria-label="Navigate to Skills section">Skills</a></li>
+        <li><a href="#projects" onclick="showSection('projects')" aria-label="Navigate to Projects section">Projects</a></li>
+        <li><a href="contact.html" aria-label="Navigate to Contact page">Contact</a></li>
       </ul>
     </nav>
     <!-- Mode Toggle Button -->
-    <button id="mode-toggle" onclick="toggleMode()">
-      <i id="mode-icon" class="fas fa-sun"></i> <!-- Default icon for light mode -->
+    <button id="mode-toggle" onclick="toggleMode()" aria-label="Toggle Light/Dark mode">
+      <i id="mode-icon" class="fas fa-sun" aria-hidden="true"></i>
     </button>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div>
-      <h1>Welcome to My Portfolio</h1>
-      <p id="greeting"></p>
+    <!-- Social Media Button -->
+    <button class="social-toggle">
+      <i class="fas fa-share-alt" aria-hidden="true"></i> <!-- Share icon -->
+    </button>
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/@anoopmagar141" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/@anoopmagar141" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/@anoopmagar141" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
     </div>
-  </section>
+  </header>
+  
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-text">
+    <h1>Welcome to My Portfolio</h1>
+    <p id="greeting"></p>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section>
+  <video id="my-video" autoplay loop muted>
+    <source src="img/luffy-on-the-beach-one-piece-moewalls-com.mp4" type="video/mp4">
+  </video>
+</section>
 
   <!-- About Section -->
   <section id="about" class="about">
@@ -51,107 +64,121 @@
     </p>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
       <div class="skills-loop">
-        <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
-        <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
-        <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-        <div class="skill-card"><i class="fab fa-react"></i><h3>React.js</h3></div>
-        <div class="skill-card"><i class="fab fa-node-js"></i><h3>Node.js</h3></div>
-        <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
-        <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git</h3></div>
-        <div class="skill-card"><i class="fab fa-docker"></i><h3>Docker</h3></div>
-        <div class="skill-card"><i class="fab fa-figma"></i><h3>Figma</h3></div>
-        <div class="skill-card"><i class="fas fa-database"></i><h3>SQL</h3></div>
-        <div class="skill-card"><i class="fab fa-java"></i><h3>Java</h3></div>
-        <div class="skill-card"><i class="fab fa-bootstrap"></i><h3>Bootstrap</h3></div>
-        <div class="skill-card"><i class="fab fa-angular"></i><h3>Angular</h3></div>
-        <div class="skill-card"><i class="fab fa-npm"></i><h3>NPM</h3></div>
-        <div class="skill-card"><i class="fab fa-github"></i><h3>GitHub</h3></div>
+        <!-- Skill cards -->
+        <div class="skill-card"><i class="fab fa-html5" aria-hidden="true"></i><h3>HTML5</h3></div>
+<div class="skill-card"><i class="fab fa-css3-alt" aria-hidden="true"></i><h3>CSS3</h3></div>
+<div class="skill-card"><i class="fab fa-js" aria-hidden="true"></i><h3>JavaScript</h3></div>
+<div class="skill-card"><i class="fab fa-react" aria-hidden="true"></i><h3>React.js</h3></div>
+<div class="skill-card"><i class="fab fa-node-js" aria-hidden="true"></i><h3>Node.js</h3></div>
+<div class="skill-card"><i class="fab fa-python" aria-hidden="true"></i><h3>Python</h3></div>
+<div class="skill-card"><i class="fab fa-git-alt" aria-hidden="true"></i><h3>Git</h3></div>
+<div class="skill-card"><i class="fab fa-docker" aria-hidden="true"></i><h3>Docker</h3></div>
+<div class="skill-card"><i class="fab fa-figma" aria-hidden="true"></i><h3>Figma</h3></div>
+<div class="skill-card"><i class="fas fa-database" aria-hidden="true"></i><h3>SQL</h3></div>
+<div class="skill-card"><i class="fab fa-java" aria-hidden="true"></i><h3>Java</h3></div>
+<div class="skill-card"><i class="fab fa-bootstrap" aria-hidden="true"></i><h3>Bootstrap</h3></div>
+<div class="skill-card"><i class="fab fa-angular" aria-hidden="true"></i><h3>Angular</h3></div>
+<div class="skill-card"><i class="fab fa-npm" aria-hidden="true"></i><h3>NPM</h3></div>
+<div class="skill-card"><i class="fab fa-github" aria-hidden="true"></i><h3>GitHub</h3></div>
+<div class="skill-card"><i class="fab fa-laravel" aria-hidden="true"></i><h3>Laravel</h3></div>
+<div class="skill-card"><i class="fab fa-sass" aria-hidden="true"></i><h3>SASS</h3></div>
+<div class="skill-card"><i class="fab fa-aws" aria-hidden="true"></i><h3>AWS</h3></div>
+<div class="skill-card"><i class="fab fa-php" aria-hidden="true"></i><h3>PHP</h3></div>
+<div class="skill-card"><i class="fab fa-vuejs" aria-hidden="true"></i><h3>Vue.js</h3></div>
+<div class="skill-card"><i class="fab fa-swift" aria-hidden="true"></i><h3>Swift</h3></div>
+<div class="skill-card"><i class="fab fa-linux" aria-hidden="true"></i><h3>Linux</h3></div>
+<div class="skill-card"><i class="fab fa-wordpress" aria-hidden="true"></i><h3>WordPress</h3></div>
       </div>
     </div>
   </section>
+  
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-container">
-      <!-- Interactive Project Cards -->
-      <div class="project-card">
-        <h3>Project 1</h3>
-        <p>Description of Project 1</p>
-        <div class="project-details">
-          <p>Additional details about Project 1...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 2</h3>
-        <p>Description of Project 2</p>
-        <div class="project-details">
-          <p>Additional details about Project 2...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 3</h3>
-        <p>Description of Project 3</p>
-        <div class="project-details">
-          <p>Additional details about Project 3...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 4</h3>
-        <p>Description of Project 4</p>
-        <div class="project-details">
-          <p>Additional details about Project 4...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 5</h3>
-        <p>Description of Project 5</p>
-        <div class="project-details">
-          <p>Additional details about Project 5...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 6</h3>
-        <p>Description of Project 6</p>
-        <div class="project-details">
-          <p>Additional details about Project 6...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 7</h3>
-        <p>Description of Project 7</p>
-        <div class="project-details">
-          <p>Additional details about Project 7...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 8</h3>
-        <p>Description of Project 8</p>
-        <div class="project-details">
-          <p>Additional details about Project 8...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 9</h3>
-        <p>Description of Project 9</p>
-        <div class="project-details">
-          <p>Additional details about Project 9...</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <h3>Project 10</h3>
-        <p>Description of Project 10</p>
-        <div class="project-details">
-          <p>Additional details about Project 10...</p>
-        </div>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-container">
+    <!-- Interactive Project Cards -->
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Description of Project 1</p>
+      <div class="project-details">
+        <p>Additional details about Project 1...</p>
       </div>
     </div>
-  </section>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>Description of Project 2</p>
+      <div class="project-details">
+        <p>Additional details about Project 2...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Description of Project 3</p>
+      <div class="project-details">
+        <p>Additional details about Project 3...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 4</h3>
+      <p>Description of Project 4</p>
+      <div class="project-details">
+        <p>Additional details about Project 4...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 5</h3>
+      <p>Description of Project 5</p>
+      <div class="project-details">
+        <p>Additional details about Project 5...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 6</h3>
+      <p>Description of Project 6</p>
+      <div class="project-details">
+        <p>Additional details about Project 6...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 7</h3>
+      <p>Description of Project 7</p>
+      <div class="project-details">
+        <p>Additional details about Project 7...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 8</h3>
+      <p>Description of Project 8</p>
+      <div class="project-details">
+        <p>Additional details about Project 8...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 9</h3>
+      <p>Description of Project 9</p>
+      <div class="project-details">
+        <p>Additional details about Project 9...</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Project 10</h3>
+      <p>Description of Project 10</p>
+      <div class="project-details">
+        <p>Additional details about Project 10...</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Add a footer for better site navigation -->
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
