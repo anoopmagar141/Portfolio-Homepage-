@@ -1,427 +1,511 @@
-/* Reset CSS */
+/* General Reset */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f3f3f3;
-    color: #333;
-    scroll-behavior: smooth;
-  }
-  
-  /* Navbar */
-  #navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #f39c12;
-  }
-  
-  /* Hero Section */
-  .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin: 0;
-    animation: fadeInDown 1.5s;
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-    animation: fadeInUp 1.5s;
-  }
-  
-  /* Section Titles */
-  .section-title {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #444;
-  }
-  
-  /* About Section */
-  .about {
-    padding: 50px 20px;
-    background-color: white;
-    text-align: center;
-  }
-  
-  /* Skills Section */
-  .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  .skill-card {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .skill-card:hover {
-    transform: scale(1.1);
-  }
-  
-  .skill-card i {
-    font-size: 2rem;
-    color: #6a11cb;
-  }
-  
-  /* Projects Section */
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    margin-top: 80px; /* Space to avoid overlap with fixed navbar */
-  }
-  
-  .project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
-    min-height: 250px; /* Ensure each card has a minimum height */
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    background-color: #f3f3f3;
-  }
-  
-  .project-card h3 {
-    margin-top: 0;
-    color: #6a11cb;
-  }
-  
-  .project-card .project-details {
-    margin-top: 10px;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, height 0.3s ease;
-  }
-  
-  .project-card:hover .project-details {
-    opacity: 1;
-    height: auto;
-  }
-  
-  /* Keyframes for Animations */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Highlight Active Section in Navbar */
-  .nav-links li a.active {
-    color: #f39c12;
-    border-bottom: 2px solid #f39c12;
-  }
-  
-  /* Reveal Animation */
-  .reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Button Styles */
-  button {
-    background: #6a11cb;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background: #2575fc;
-  }
-  
-  /* Skills Section */
-  .skills-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    background-color: #f9f9f9;
-    padding: 20px 0;
-  }
-  
-  .skills-loop {
-    display: flex;
-    gap: 20px;
-    animation: scroll-left 10s linear infinite;
-  }
-  
-  .skill-card {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 150px; /* Ensure a consistent width for the animation */
-    flex: 0 0 auto; /* Prevent shrinking */
-  }
-  
-  .skill-card i {
-    font-size: 2rem;
-    color: #6a11cb;
-  }
-  
-  /* Animation for scrolling left */
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  /* Duplicate the skills-loop for seamless transition */
-  .skills-container .skills-loop:after {
-    content: '';
-    display: block;
-    flex-shrink: 0;
-  }
-  body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  body.dark-mode #navbar {
-    background-color: #333;
-  }
-  
-  body.dark-mode .nav-links li a {
-    color: #fff;
-  }
-  
-  body.dark-mode .hero {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-  }
-  
-  body.dark-mode .project-card,
-  body.dark-mode .skill-card,
-  body.dark-mode .about {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  body.dark-mode .hero h1,
-  body.dark-mode .hero p {
-    color: #fff;
-  }
-  
-  body.dark-mode .project-card:hover {
-    background-color: #444;
-  }
-  
-  body.dark-mode .section-title {
-    color: #fff;
-  }
-  /* Skills Section */
-.skills-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    background-color: #f9f9f9;
-    padding: 20px 0;
-  }
-  
-  .skills-loop {
-    display: flex;
-    gap: 20px;
-    animation: scroll-left 10s linear infinite;
-  }
-  
-  .skill-card {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 150px;
-    flex: 0 0 auto;
-  }
-  
-  .skill-card i {
-    font-size: 2rem;
-    color: #6a11cb;
-  }
-  
-  /* Animation for scrolling left */
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  /* Duplicate the skills-loop for seamless transition */
-  .skills-container .skills-loop:after {
-    content: '';
-    display: block;
-    flex-shrink: 0;
-  }
-  button {
-    background: #6a11cb;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-  }
-  
-  button:hover {
-    background: #2575fc;
-    transform: scale(1.05);
-  }
-
-  /* Skills Section */
-.skills-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    background-color: #f9f9f9;
-    padding: 20px 0;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  color: #333;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.skills-loop {
-    display: flex;
-    gap: 20px;
-    animation: scroll-left 10s linear infinite;
+/* Navbar Styles */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
-.skill-card {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 150px; /* Ensure a consistent width for the animation */
-    flex: 0 0 auto; /* Prevent shrinking */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-.skill-card i {
-    font-size: 2rem;
-    color: #6a11cb;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+}
+
+/* Mode Toggle Button */
+#mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Social Media Button (Main button) */
+.social-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Social Media Links */
+.social-links {
+  position: absolute;
+  top: 75px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.social-links a {
+  color: white;
+  font-size: 32px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f39c12;
+  transform: translateY(-5px);
+}
+
+/* Show social links when button is clicked */
+.social-toggle:focus + .social-links,
+.social-toggle:active + .social-links {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional: Add animation for better visual effect */
+.social-links a {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-toggle:focus + .social-links a,
+.social-toggle:active + .social-links a {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .social-links {
+    top: 90px;
+    right: 10px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+#my-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-text {
+  z-index: 1;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  margin: 60px 0 20px;
+  font-size: 2rem;
+  color: #0b0b0b;
+}
+
+/* About Section */
+.about {
+  padding: 50px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+/* Projects Section */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
+  min-height: 250px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  background-color: #f3f3f3;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #6a11cb;
+}
+
+.project-card .project-details {
+  margin-top: 10px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.project-card:hover .project-details {
+  opacity: 1;
+  height: auto;
+}
+
+/* Button Styles */
+button {
+  background: #6a11cb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #2575fc;
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode #navbar {
+  background-color: #333;
+}
+
+body.dark-mode .nav-links li a {
+  color: #fff;
+}
+
+body.dark-mode .hero,
+body.dark-mode .project-card,
+body.dark-mode .skill-card,
+body.dark-mode .about {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .section-title {
+  color: #fff;
+}
+
+body.dark-mode .project-card:hover {
+  background-color: #444;
+}
+
+/* Mode Toggle Button */
+#mode-toggle {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+#mode-toggle:hover {
+  background: #2575fc;
+  transform: scale(1.1);
+}
+
+#mode-toggle span {
+  font-weight: bold;
+}
+
+#mode-toggle i {
+  margin-left: 8px;
+  font-size: 1.4rem;
 }
 
 /* Skills Section */
 .skills-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    background-color: #f9f9f9;
-    padding: 20px 0;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 20px 0;
 }
 
 .skills-loop {
-    display: flex;
-    gap: 20px;
-    animation: scroll-left 10s linear infinite;
-    padding-left: 20px; /* Prevent first card from being cut off */
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 10s linear infinite;
+  padding-left: 20px;
 }
 
 .skill-card {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 150px; /* Ensure a consistent width for the animation */
-    flex: 0 0 auto; /* Prevent shrinking */
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-card i {
-    font-size: 2rem;
-    color: #6a11cb;
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
-/* Animation for scrolling left */
+/* Scrolling Animation */
 @keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-/* Duplicate the skills-loop for seamless transition */
-.skills-container .skills-loop:after {
-    content: '';
-    display: block;
-    flex-shrink: 0;
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #2575fc;
+}
+
+footer .social-icons {
+  margin-top: 15px;
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+/* Contact Page Styling */
+.contact {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact ul li {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 15px 0;
+}
+
+.contact a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #f39c12;
+}
+
+#chat {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+#chat h3 {
+  font-size: 1.8rem;
+  color: #6a11cb;
+  margin-bottom: 15px;
+}
+
+#chat-box {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  resize: none;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+#chat-box:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+#chat button {
+  background: #6a11cb;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#chat button:hover {
+  background: #2575fc;
+  transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
+
+  #chat {
+    padding: 15px;
+  }
+
+  #chat-box {
+    height: 120px;
+  }
+
+  #chat button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact p {
+    font-size: 0.9rem;
+  }
+
+  #chat-box {
+    height: 100px;
+  }
+
+  #chat button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
